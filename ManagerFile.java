@@ -1,6 +1,7 @@
 
 package controller;
 
-public class ManagerFile {
+public class ManagerFile {Xin chào
+    
     
 }
