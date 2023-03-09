@@ -6,12 +6,14 @@ public class Sale extends Employee{
     private int sales;
     private float commission;
 
-    public Sale(int salaryMonth, int sales, float commission, String ID, String name, int age, String address, String email, int tax) {
-        super(ID, name, age, address, email, tax);
+    public Sale(String typeEmployee, String ID, String name, int age, String address, String email, int salaryMonth, int sales, float commission) {
+        super(typeEmployee, ID, name, age, address, email);
         this.salaryMonth = salaryMonth;
         this.sales = sales;
         this.commission = commission;
     }
+
+   
 
     public int getSalaryMonth() {
         return salaryMonth;
