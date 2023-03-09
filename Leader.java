@@ -5,11 +5,13 @@ public class Leader extends Employee{
     private int salaryMonth;
     private int salaryResponsibility;
 
-    public Leader(int salaryMonth, int salaryResponsibility, String ID, String name, int age, String address, String email, int tax) {
-        super(ID, name, age, address, email, tax);
+    public Leader(String typeEmployee, String ID, String name, int age, String address, String email, int salaryMonth, int salaryResponsibility) {
+        super(typeEmployee, ID, name, age, address, email);
         this.salaryMonth = salaryMonth;
         this.salaryResponsibility = salaryResponsibility;
     }
+
+   
 
     public int getSalaryMonth() {
         return salaryMonth;
@@ -43,3 +45,4 @@ public class Leader extends Employee{
     }
     
 }
+
