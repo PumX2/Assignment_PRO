@@ -44,15 +44,6 @@ public class Sale extends Employee{
         return (int) (salaryMonth+sales*commission);
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Sale{");
-        sb.append("salaryMonth=").append(salaryMonth);
-        sb.append(", sales=").append(sales);
-        sb.append(", commission=").append(commission);
-        sb.append('}');
-        return sb.toString();
-    }
+    
     
 }
