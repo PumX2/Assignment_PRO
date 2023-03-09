@@ -2,20 +2,28 @@
 package model;
 
 public abstract class Employee {
+    private String typeEmployee;
     private String ID;
     private String name;
     private int age;
     private String address;
     private String email;
-    private int tax;
 
-    public Employee(String ID, String name, int age, String address, String email, int tax) {
+    public Employee(String typeEmployee, String ID, String name, int age, String address, String email) {
+        this.typeEmployee = typeEmployee;
         this.ID = ID;
         this.name = name;
         this.age = age;
         this.address = address;
         this.email = email;
-        this.tax = tax;
+    }
+
+    public String getTypeEmployee() {
+        return typeEmployee;
+    }
+
+    public void setTypeEmployee(String typeEmployee) {
+        this.typeEmployee = typeEmployee;
     }
 
     public String getID() {
@@ -58,28 +66,15 @@ public abstract class Employee {
         this.email = email;
     }
 
-    public int getTax() {
-        return tax;
-    }
-
-    public void setTax(int tax) {
-        if (salary()<9000000) {
-           this.tax=0;
-        }
-        else if (9000000<=salary() && salary()<=15000000) {
-            this.tax=salary()*10/100;
-        }
-        else if (salary()>15000000) {
-            this.tax=salary()*12/100;
-        }
-    }
+    
     
     public abstract int salary();
 
     @Override
     public String toString() {
-        return "Employee{" + "ID=" + ID + ", name=" + name + ", age=" + age + ", address=" + address + ", email=" + email + ", tax=" + tax + '}';
+        return "Employee{" + "ID=" + ID + ", name=" + name + ", age=" + age + ", address=" + address + ", email=" + email + '}';
     }
     
 
 }
+
