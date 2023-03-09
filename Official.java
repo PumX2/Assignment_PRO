@@ -4,10 +4,12 @@ package model;
 public class Official extends Employee{
     private int salaryMonth;
 
-    public Official(int salaryMonth, String ID, String name, int age, String address, String email, int tax) {
-        super(ID, name, age, address, email, tax);
+    public Official(String typeEmployee, String ID, String name, int age, String address, String email, int salaryMonth) {
+        super(typeEmployee, ID, name, age, address, email);
         this.salaryMonth = salaryMonth;
     }
+
+   
 
     public int getSalaryMonth() {
         return salaryMonth;
