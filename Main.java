@@ -31,12 +31,21 @@ public class Main extends Menu {
             case 3:
                 break;
             case 4:
+                System.out.print("Enter minimum salary: ");
+                minSalary = scanner.nextDouble();
+                scanner.nextLine();
+                System.out.print("Enter maximum salary: ");
+                maxSalary = scanner.nextDouble();
+                scanner.nextLine();
+                controller.findEmployeesInSalaryRange(minSalary, maxSalary);
                 break;
             case 5:
+                controller.sortEmployeesByLastName();
                 break;
             case 6:
                 break;
             case 7:
+                controller.displayRetiredEmployees();
                 break;
             case 8:
                 System.out.println("Thank You...");
