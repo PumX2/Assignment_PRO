@@ -6,10 +6,10 @@ import java.util.Comparator;
 import java.util.Scanner;
 public class Manager {
     private ArrayList<Employee> employees = new ArrayList<>();
-    public void findSalaryRange(double minSalary, double maxSalary) {
+    public void findSalaryRange(double minSalaryMonth, double maxSalaryMonth) {
     for (Employee employee : employees) {
-        if (employee.getSalary() >= minSalary && employee.getSalary() <= maxSalary) {
-            System.out.println(employee.getName() + " - " + employee.getSalary());
+        if (employee.getSalaryMonth() >=  && employee.getSalaryMonth() <= maxSalaryMonth) {
+            System.out.println(employee.getName() + " - " + employee.getSalaryMonth());
         }
     }
 }
@@ -19,7 +19,7 @@ public class Manager {
         public int compare(Employee o1, Employee o2) {
             int lastNameCompare = o1.getName().split(" ")[1].compareTo(o2.getName().split(" ")[1]);
             if (lastNameCompare == 0) {
-                return Double.compare(o1.getSalary(), o2.getSalary());
+                return Double.compare(o1.getSalaryMonth(), o2.getSalaryMonth());
             }
             return lastNameCompare;
         }
@@ -36,13 +36,13 @@ public class Manager {
     Collections.sort(retiredEmployees, new Comparator<Employee>() {
         @Override
         public int compare(Employee o1, Employee o2) {
-            return Double.compare(o2.getSalary(), o1.getSalary());
+            return Double.compare(o2.getSalaryMonth(), o1.getSalaryMonth());
         }
     });
     System.out.println("The top 3 highest paid retired employees are:");
     for (int i = 0; i < Math.min(3, retiredEmployees.size()); i++) {
         Employee employee = retiredEmployees.get(i);
-        System.out.println(employee.getName() + " - " + employee.getSalary());
+        System.out.println(employee.getName() + " - " + employee.getSalaryMonth());
     }
 }
 
