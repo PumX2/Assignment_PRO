@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 import java.text.ParseException;
 
 public class Main extends Menu {
+    Scanner scanner = new Scanner(System.in);
+    Manager manager = new Manager();
     static String[] mc = {"Export list", "Delete employee", "Update information", "Find employees by salary range", "Sort by name and salary",
         "Add new staff", "Output the 3 highest-earning retirement age employees", "Exit."};
     ArrayList<Employee> employees = new ArrayList<>();
@@ -32,20 +34,19 @@ public class Main extends Menu {
                 break;
             case 4:
                 System.out.print("Enter minimum salary: ");
-                minSalary = scanner.nextDouble();
-                scanner.nextLine();
+                double minSalary = Validation.checkInputInt();
                 System.out.print("Enter maximum salary: ");
-                maxSalary = scanner.nextDouble();
-                scanner.nextLine();
-                controller.findEmployeesInSalaryRange(minSalary, maxSalary);
+                double maxSalary = Validation.checkInputInt();
+                Validation.checkInputIntSalary(minSalary, maxSalary);
+                manager.findSalaryRange(minSalary, maxSalary);
                 break;
             case 5:
-                controller.sortEmployeesByLastName();
+                manager.sortEmployees();
                 break;
             case 6:
                 break;
             case 7:
-                controller.displayRetiredEmployees();
+                manager.displayRetiredEmployees();
                 break;
             case 8:
                 System.out.println("Thank You...");
