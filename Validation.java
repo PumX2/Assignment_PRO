@@ -50,7 +50,20 @@ public class Validation {
             System.out.print("Enter again: ");
         }
     }
-
+    public static int checkInputInt(){
+        while(true){
+            try{
+                int result = Integer.parseInt(in.nextLine());
+                if(result<=0){
+                    throw new NumberFormatException();
+                }
+                return result;
+            }
+            catch(NumberFormatException e){
+                System.err.println("Input must be digit.");
+            }
+        }
+    }
 
     public static String checkInputEmail() {
         while (true) {
